@@ -1,3 +1,7 @@
 package com.deevlab.demo.repository
 
-// interface TodoRepository { }
+import com.deevlab.demo.model.Todo
+import org.springframework.data.repository.CrudRepository
+import org.springframework.stereotype.Repository
+
+@Repository interface TodoRepository : CrudRepository<Todo, Long>
