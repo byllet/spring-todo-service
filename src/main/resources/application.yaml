@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: pulse
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://${APP_POSTGRESQL_HOST:127.0.0.1}:${APP_POSTGRESQL_PORT:5432}/${APP_POSTGRESQL_NAME:demo}
+    username: ${APP_POSTGRESQL_USER:postgres}
+    password: ${APP_POSTGRESQL_PASSWORD:123456}
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/changelog-master.yml
+    default-schema: demo
+
+logging:
+  level:
+    com.deevlab: DEBUG
+
+springdoc:
+  api-docs:
+    resolve-schema-properties: false
+    path: /api
+  swagger-ui:
+    path: /api/doc
+    display-request-duration: true
+    show-extensions: true
+    show-common-extensions: true

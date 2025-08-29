@@ -1,0 +1,15 @@
+services:
+  demo-postgres:
+    image: postgres:17.5
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: demo
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+    volumes:
+      - type: bind
+        source: ./data/postgres
+        target: /var/lib/postgresql/data
+      - ./scripts/postgres:/docker-entrypoint-initdb.d/
+    container_name: demo-postgres

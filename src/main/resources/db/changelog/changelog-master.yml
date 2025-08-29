@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_demo_tables
+      author: goat
+      comment: create demo tables
+      changes:
+        - sqlFile:
+            path: changes/1.0.0-create_demo_tables.sql
+            relativeToChangelogFile: true
